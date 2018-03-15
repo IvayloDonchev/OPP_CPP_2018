@@ -30,19 +30,29 @@ public:
 			}
 		}
 	}
-	Stack(const Stack& other){
-		size_t n = const_cast<Stack&>(other).Length();	//брой на елементите на стека
-		int *buf = new int[n];
-		size_t i = 0;
-		for (PNode p = other.sp; p; p = p->next, i++)
-			buf[i] = p->key;
-		sp = nullptr;
-		for (size_t j = n; j > 0; j--)
-			Push(buf[j]);
-		delete[] buf;
+	Stack(const Stack& other){ //copy constructor
+		*this = other;
+		//int n = const_cast<Stack&>(other).Length();	//брой на елементите на стека
+		//int *buf = new int[n];
+		//int i = 0;
+		//for (PNode p = other.sp; p; p = p->next)
+		//	buf[i++] = p->key;
+		//for (int i = n - 1; i >= 0; i--)
+		//	Push(buf[i]);
+		//delete[] buf;
 	}
 	Stack& operator=(const Stack& other) {
-		//-------------------------
+		if (this == &other) return *this;
+		if (sp) this->~Stack();
+		int n = const_cast<Stack&>(other).Length();
+		int *buf = new int[n];
+		int i = 0;
+		for (PNode p = other.sp; p; p = p->next)
+			buf[i++] = p->key;
+		for (int i = n - 1; i >= 0; i--)
+			Push(buf[i]);
+		delete[] buf;
+		return *this;
 	}
 	bool Push(int x) {    //добавяне на елемент към стека
 		if (!sp) {	      //ако стекът е празен
@@ -84,11 +94,19 @@ int main()
 	cout << "Length: " << stack.Length() << " elements\n";
 
 	Stack st2 = stack;  //copy constructor
+	Stack st3;
+	st3.Push(234234);
+	st3.Push(4321);
+	st3 = st2;   //copy assignment
 	int k;
 	while (stack.Pop(k))
 		cout << k << " ";
 	cout << endl;
 	while (st2.Pop(k))
+		cout << k << " ";
+	cout << endl;
+
+	while (st3.Pop(k))
 		cout << k << " ";
 	cout << endl;
 
