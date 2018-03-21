@@ -54,6 +54,16 @@ public:
 		delete[] buf;
 		return *this;
 	}
+	Stack& operator=(Stack&& other) {  //move assignment operator
+		if (this == &other) return *this;
+		if (sp) this->~Stack();
+		sp = std::move(other.sp);
+		other.sp = nullptr;
+		return *this;
+	}
+	Stack(Stack&& other) {			//move constructor
+		*this = std::move(other);
+	}
 	bool Push(int x) {    //добавяне на елемент към стека
 		if (!sp) {	      //ако стекът е празен
 			sp = new Node(x);
@@ -93,22 +103,30 @@ int main()
 		stack.Push(i);
 	cout << "Length: " << stack.Length() << " elements\n";
 
-	Stack st2 = stack;  //copy constructor
-	Stack st3;
-	st3.Push(234234);
-	st3.Push(4321);
-	st3 = st2;   //copy assignment
+	Stack st2;    //default constructor
+	st2 = std::move(stack); //move assignment
+	cout << "Length: " << stack.Length() << " elements\n";   // 0
 	int k;
-	while (stack.Pop(k))
-		cout << k << " ";
-	cout << endl;
 	while (st2.Pop(k))
 		cout << k << " ";
 	cout << endl;
+	
+	//Stack st2 = stack;  //copy constructor
+	//Stack st3;
+	//st3.Push(234234);
+	//st3.Push(4321);
+	//st3 = st2;   //copy assignment
+	//int k;
+	//while (stack.Pop(k))
+	//	cout << k << " ";
+	//cout << endl;
+	//while (st2.Pop(k))
+	//	cout << k << " ";
+	//cout << endl;
 
-	while (st3.Pop(k))
-		cout << k << " ";
-	cout << endl;
+	//while (st3.Pop(k))
+	//	cout << k << " ";
+	//cout << endl;
 
 	system("pause");
 }
