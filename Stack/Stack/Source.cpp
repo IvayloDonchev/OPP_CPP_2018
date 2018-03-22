@@ -49,7 +49,7 @@ public:
 		int i = 0;
 		for (PNode p = other.sp; p; p = p->next)
 			buf[i++] = p->key;
-		for (int i = n - 1; i >= 0; i--)
+		for (i = n - 1; i >= 0; i--)
 			Push(buf[i]);
 		delete[] buf;
 		return *this;
