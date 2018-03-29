@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 
+constexpr int arrSize()
+{
+	return (unsigned)time(nullptr);
+}
+
 int main()
 {
 	int i = 20;

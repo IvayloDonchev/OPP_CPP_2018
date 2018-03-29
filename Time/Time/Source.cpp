@@ -8,5 +8,8 @@ int main()
 	cout << t1 - t2 << endl;
 	cout << Time(7, 49, 55) + t2 << endl;
 
+	t1 -= 1845;
+	cout << "t1 = " << t1 << endl;
+
 	system("pause");
 }

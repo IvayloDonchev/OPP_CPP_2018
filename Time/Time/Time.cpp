@@ -1,4 +1,5 @@
 #include "Time.h"
+#include <iomanip>
 
 Time::Time() : hours(0), minutes(0), seconds(0)
 {}
@@ -61,7 +62,11 @@ void Time::Simplify()
 
 std::ostream & operator<<(std::ostream &out, const Time &t)
 {
-	out << t.hours << ':' << t.minutes << ':' << t.seconds;
+	out.setf(std::ios::fixed | std::ios::showpoint);
+	out.precision(2);
+	out << std::setfill('0') << std::setw(2) << t.hours << ':' 
+		<< std::setfill('0') << std::setw(2) << t.minutes << ':' 
+		<< std::setfill('0') << std::setw(2) << t.seconds;
 	return out;
 }
 
