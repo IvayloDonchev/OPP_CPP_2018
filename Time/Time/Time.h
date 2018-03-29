@@ -5,11 +5,12 @@ class Time
 private:
 	int hours;
 	int minutes;
+	int seconds;
 	void Simplify();
 public:
 	Time();
-	Time(int, int);
-	void SetTime(int = 0, int = 0);
+	Time(int, int, int);
+	void SetTime(int = 0, int = 0, int = 0);
 	operator int();	//преобразува времето до int
 	Time operator+(int);
 	Time operator-(int);
