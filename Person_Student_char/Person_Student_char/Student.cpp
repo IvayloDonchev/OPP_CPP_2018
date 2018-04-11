@@ -76,7 +76,12 @@ std::istream & operator>>(std::istream &ent, Student &s)
 	std::cout << "Enter faculty number: ";
 	ent >> s.fn;
 	std::cout << "Enter program: ";
-	ent >> s.program;
+	char buf[50];
+	ent >> buf;
+	if (s.program) delete[] s.program;
+	int sz = strlen(buf);
+	s.program = new char[sz];
+	strcpy_s(s.program, sz, buf);
 	std::cout << "Enter year of study: ";
 	ent >> s.year;
 	return ent;
