@@ -31,7 +31,9 @@ public:
 	Element& operator[](int);	//индексна операция
 	size_t size();				//брой на елементите в списъка
 	friend std::ostream& operator <<(std::ostream&, const List&);
-	List(const List&) = delete;
-	List& operator=(const List&) = delete;
+	List(const List&);
+	List& operator=(const List&);
+	List(List&&);
+	List& operator=(List&&);
 };
 

@@ -88,6 +88,40 @@ size_t List::size()
 	return len;
 }
 
+List::List(const List &other)
+{
+	*this = other;
+}
+
+List & List::operator=(const List &other)
+{
+	if (this == &other) return *this;
+	this->~List();
+	top = new Node(other.top->key);
+	pList r = top;
+	for (pList p = other.top->next; p; p = p->next)
+	{
+		pList q = new Node(p->key);
+		r->next = q;	// добавяне в края
+		r = q;
+	}
+	return *this;
+}
+
+List::List(List &&other)
+{
+	*this = std::move(other);
+}
+
+List & List::operator=(List &&other)
+{
+	if (this == &other) return *this;
+	this->~List();
+	top = std::move(other.top);
+	other.top = nullptr;
+	return *this;
+}
+
 std::ostream & operator<<(std::ostream &out, const List &l)
 {
 	for (List::pList p = l.top; p; p = p->next)
