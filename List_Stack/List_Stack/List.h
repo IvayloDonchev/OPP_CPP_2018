@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <initializer_list>
+
 typedef int Element;
 
 class List
