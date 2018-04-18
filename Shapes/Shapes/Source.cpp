@@ -15,6 +15,7 @@ int main()
 	
 	for (auto x : shapes)
 		x->Disp();
+	//Shape s; //грешка! (обект на абстрактен клас)
 
 	system("pause");
 }
