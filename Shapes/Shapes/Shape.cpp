@@ -1,4 +1,5 @@
 #include "Shape.h"
+#include <iostream>
 
 double Shape::Area()
 {
@@ -7,4 +8,5 @@ double Shape::Area()
 
 void Shape::Disp()
 {
+	std::cout << "Shape::Disp()" << std::endl;
 }
