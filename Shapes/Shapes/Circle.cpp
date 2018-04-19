@@ -17,7 +17,5 @@ double Circle::Area()
 
 void Circle::Disp()
 {
-	std::cout << "Circle ";
-	std::cout << "radius: " << r << std::endl;
-	std::cout << "Area: " << Area() << std::endl;
+	std::cout << "Circle with radius " << r << " and area " << Area() << std::endl;
 }

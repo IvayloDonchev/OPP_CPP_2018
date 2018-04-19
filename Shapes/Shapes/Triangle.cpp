@@ -1,7 +1,7 @@
 #include "Triangle.h"
 #include <cmath>
 #include <iostream>
-#include <exception>
+#include <stdexcept>
 
 Triangle::Triangle(double a, double b, double c) : a(a), b(b), c(c)
 {
@@ -18,7 +18,6 @@ double Triangle::Area()
 
 void Triangle::Disp()
 {
-	std::cout << "Triangle ";
-	std::cout << "Sides: " << a << ", " << b << ", " << c << std::endl;
-	std::cout << "Area: " << Area() << std::endl;
+	std::cout << "Triangle with sides " << a << ", " << b << ", " << c;
+	std::cout << " and area " << Area() << std::endl;
 }

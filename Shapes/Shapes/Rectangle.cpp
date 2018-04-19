@@ -15,8 +15,6 @@ double Rectangle::Area()
 
 void Rectangle::Disp()
 {
-	std::cout << "Rectangle ";
-	std::cout << "sides: " << a << ", " << b << std::endl;
-	std::cout << "Area: " << Area() << std::endl;
-
+	std::cout << "Rectangle with sides " << a << ", " << b;
+	std::cout << " and area " << Area() << std::endl;
 }
