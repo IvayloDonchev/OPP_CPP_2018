@@ -1,12 +1,11 @@
 #include "Account.h"
 
 
+Account::Account(Client & c, double b, double i) :
+	client(c), balance(b), interest(i)
+{}
 
-Account::Account()
+void Account::DepositMoney(double d)
 {
-}
-
-
-Account::~Account()
-{
+	balance += d;
 }

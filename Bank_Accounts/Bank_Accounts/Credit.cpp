@@ -1,12 +1,9 @@
 #include "Credit.h"
 
+Credit::Credit(Client &c, double b, double i) : Account(c, b, i)
+{}
 
-
-Credit::Credit()
+void Credit::WithdrawMoney(double d)
 {
-}
-
-
-Credit::~Credit()
-{
+	balance -= d;
 }

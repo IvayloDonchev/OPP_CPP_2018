@@ -1,12 +1,9 @@
 #include "Mortgage.h"
 
+Mortgage::Mortgage(Client &c, double b, double i) : Account(c,b,i)
+{}
 
-
-Mortgage::Mortgage()
+void Mortgage::WithdrawMoney(double d)
 {
-}
-
-
-Mortgage::~Mortgage()
-{
+	balance -= d;
 }

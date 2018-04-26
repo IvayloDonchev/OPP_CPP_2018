@@ -4,8 +4,10 @@ class Mortgage :
 	public Account
 {
 public:
-	Mortgage();
-	~Mortgage();
+	Mortgage() = default;
+	Mortgage(Client&, double, double);
+	~Mortgage() = default;
+	void WithdrawMoney(double);
 	double CalculateInterest(int months) override;
 };
 

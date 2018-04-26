@@ -3,12 +3,12 @@
 class Account			//банкова сметка
 {
 public:
-	Account()=default;
+	Account() = default;
 	Account(Client&, double, double);
-	~Account()=default;
+	~Account() = default;
 	void DepositMoney(double); //вн€с€не на пари
 	virtual double CalculateInterest(int months) = 0; //изчисл€ване на лихвата
-private:
+protected:
 	Client client;		//клиент
 	double balance;		//баланс
 	double interest;	//месечен лихвен процент

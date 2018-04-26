@@ -1,12 +1,9 @@
 #include "Deposit.h"
 
+Deposit::Deposit(Client &c, double b, double i) : Account(c, b, i)
+{}
 
-
-Deposit::Deposit()
+void Deposit::WithdrawMoney(double d)
 {
-}
-
-
-Deposit::~Deposit()
-{
+	balance -= d;
 }
