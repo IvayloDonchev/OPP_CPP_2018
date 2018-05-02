@@ -2,6 +2,7 @@
 #include "Cooker.h"
 #include "Fridge.h"
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main()
@@ -16,6 +17,12 @@ int main()
 		a->Show();
 		cout << "---------------------------------------------\n";
 	}
+	vector<Article*> v;
+	v.push_back(new Cooker("Diplomat", 550, 1000, 4500, 38, 3));
+	v.push_back(new Fridge("Beko", 340, 123, 175, 60, 300, true));
+	v.push_back(new Cooker("Delonghi", 700, 321, 4000, 30, 4));
+	for (int i = 0; i < v.size(); i++)
+		v[i]->Show();
 
 	system("pause");
 }
