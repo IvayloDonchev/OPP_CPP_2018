@@ -9,6 +9,7 @@ public:
 	Rectangle(double, double);
 	~Rectangle()=default;
 	virtual double Area() override;
+	virtual double Perimeter() override;
 	virtual void Disp() override;
 private:
 	double a, b;

@@ -16,6 +16,11 @@ double Triangle::Area()
 	return sqrt(p*(p - a)*(p - b)*(p - c));
 }
 
+double Triangle::Perimeter()
+{
+	return a + b + c;
+}
+
 void Triangle::Disp()
 {
 	std::cout << "Triangle with sides " << a << ", " << b << ", " << c;

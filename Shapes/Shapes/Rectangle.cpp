@@ -13,6 +13,11 @@ double Rectangle::Area()
 	return a*b;
 }
 
+double Rectangle::Perimeter()
+{
+	return 2 * a + 2 + b;
+}
+
 void Rectangle::Disp()
 {
 	std::cout << "Rectangle with sides " << a << ", " << b;

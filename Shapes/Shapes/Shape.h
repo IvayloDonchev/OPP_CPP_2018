@@ -1,8 +1,9 @@
 #pragma once
 class Shape   //Абстрактен клас
 {
-public:
-	virtual double Area()=0;	//чист виртуален метод
-	virtual void Disp()=0;		//чист виртуален метод
+public:		//само чисти виртуални методи
+	virtual double Area()=0;	
+	virtual double Perimeter() = 0;
+	virtual void Disp()=0;	
 };
 

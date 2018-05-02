@@ -15,6 +15,11 @@ double Circle::Area()
 	return M_PI*r*r;
 }
 
+double Circle::Perimeter()
+{
+	return 2 * r * M_PI;
+}
+
 void Circle::Disp()
 {
 	std::cout << "Circle with radius " << r << " and area " << Area() << std::endl;
