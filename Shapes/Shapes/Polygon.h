@@ -10,9 +10,9 @@ public:
 	Polygon() = default;
 	Polygon(std::initializer_list<Point>);
 	~Polygon() = default;
-	virtual double Perimeter() override;
-	virtual double Area() override; // Not implemented (returns 0)
-	virtual void Disp() override;
+	virtual double Perimeter() const override;
+	virtual double Area() const override; 
+	virtual void Disp() const override;
 private:
 	std::vector<Point> points;
 };

@@ -14,7 +14,8 @@ int main()
 					 new Circle(7.5),
 					 new Circle(1.0),
 					 new Polygon({Point(2,0), Point(4,0), Point(5,1), Point(4,2), Point(2,2), Point(1,1)}),
-					 new Polygon({Point(0,0), Point(3,0), Point(0,4)})
+					 new Polygon({Point(0,0), Point(3,0), Point(0,4)}),
+		             new Polygon({Point(1,0), Point(5,0), Point(5,2), Point(1,2)})
 	};
 	
 	for (auto x : shapes)

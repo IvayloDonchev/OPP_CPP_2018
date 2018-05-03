@@ -1,14 +1,12 @@
 #pragma once
 #include <iostream>
-class Point
+struct Point
 {
-public:
+	double x, y;
 	Point();
 	Point(double, double);
 	~Point() = default;
-	double DistanceTo(Point);
+	double DistanceTo(Point) const;
 	friend std::ostream& operator<<(std::ostream&, const Point&);
-private:
-	double x, y;
 };
 

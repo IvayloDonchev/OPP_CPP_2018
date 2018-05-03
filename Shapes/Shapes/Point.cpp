@@ -9,7 +9,7 @@ Point::Point() : x(0.0), y(0.0)
 Point::Point(double x, double y) : x(x), y(y)
 {}
 
-double Point::DistanceTo(Point p)
+double Point::DistanceTo(Point p) const
 {
 	return sqrt(pow(p.x-x,2)+pow(p.y-y,2));
 }

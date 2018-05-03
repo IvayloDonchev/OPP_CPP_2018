@@ -10,18 +10,18 @@ Triangle::Triangle(double a, double b, double c) : a(a), b(b), c(c)
 		throw std::out_of_range("False triangle");
 }
 
-double Triangle::Area()
+double Triangle::Area() const
 {
 	double p = (a + b + c) / 2;
 	return sqrt(p*(p - a)*(p - b)*(p - c));
 }
 
-double Triangle::Perimeter()
+double Triangle::Perimeter() const
 {
 	return a + b + c;
 }
 
-void Triangle::Disp()
+void Triangle::Disp() const
 {
 	std::cout << "Triangle with sides " << a << ", " << b << ", " << c;
 	std::cout << " and area " << Area() << std::endl;

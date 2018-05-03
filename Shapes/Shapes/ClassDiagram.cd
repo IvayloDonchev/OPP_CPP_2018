@@ -1,32 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Circle">
-    <Position X="0.75" Y="0.5" Width="1.5" />
+  <Class Name="Circle" Collapsed="true">
+    <Position X="1.25" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAgAAAAAAAABAQAgAAA=</HashCode>
+      <HashCode>AAAAAAAAAQgAAAAAAAAAAAAAAAgAAAAAAAABAQAgAAA=</HashCode>
       <FileName>Circle.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Rectangle">
-    <Position X="5.5" Y="0.5" Width="1.5" />
+  <Class Name="Rectangle" Collapsed="true">
+    <Position X="5.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAQAAAQAgAAA=</HashCode>
+      <HashCode>gAAAAAAAAQAAAAAAAAAAAAAAAAAgAAAgAQAAAQAgAAA=</HashCode>
       <FileName>Rectangle.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Triangle">
+  <Class Name="Triangle" Collapsed="true">
     <Position X="3.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAAAAABAAAAAAAAAAAAAACgAQAAAQAgAAA=</HashCode>
+      <HashCode>AgAAAAAAAQAAAAABAAAAAAAAAAAAAACgAQAAAQAgAAA=</HashCode>
       <FileName>Triangle.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Shape">
-    <Position X="3.25" Y="0.5" Width="1.5" />
+    <Position X="4.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAQAgAAA=</HashCode>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAQAgAAA=</HashCode>
       <FileName>Shape.h</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Polygon" Collapsed="true">
+    <Position X="8" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAASAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAQAgACA=</HashCode>
+      <FileName>Polygon.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="points" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="std::vector&lt;_Ty, _Alloc&gt;" Collapsed="true">
+    <Position X="8" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUIAEIEqCrBsEABAAOMIAAAyAAUEQBIAhQkwggAFUkI=</HashCode>
+      <FileName>c:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.13.26128\include\vector</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Point" Collapsed="true">
+    <Position X="1.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgACCAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>Point.h</FileName>
+    </TypeIdentifier>
+  </Struct>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

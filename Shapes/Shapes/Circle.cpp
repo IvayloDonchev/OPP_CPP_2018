@@ -10,17 +10,17 @@ Circle::Circle(double r) : r(r)
 		throw std::out_of_range("False circle");
 }
 
-double Circle::Area()
+double Circle::Area() const
 {
 	return M_PI*r*r;
 }
 
-double Circle::Perimeter()
+double Circle::Perimeter() const
 {
 	return 2 * r * M_PI;
 }
 
-void Circle::Disp()
+void Circle::Disp() const
 {
 	std::cout << "Circle with radius " << r << " and area " << Area() << std::endl;
 }

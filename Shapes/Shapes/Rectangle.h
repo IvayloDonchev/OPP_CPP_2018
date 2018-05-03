@@ -5,12 +5,12 @@ class Rectangle :
 	public Shape
 {
 public:
-	Rectangle()=default;
+	Rectangle() = default;
 	Rectangle(double, double);
-	~Rectangle()=default;
-	virtual double Area() override;
-	virtual double Perimeter() override;
-	virtual void Disp() override;
+	~Rectangle() = default;
+	virtual double Area() const override;
+	virtual double Perimeter() const override;
+	virtual void Disp() const override;
 private:
 	double a, b;
 };
