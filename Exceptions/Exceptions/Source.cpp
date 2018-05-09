@@ -2,17 +2,20 @@
 #include "OutOfRangeException.h"
 #include <cmath>
 #include <iostream>
+#include <string>
 using namespace std;
 
-/*    Напишете метод ReadNumber(int start, int end), който въвежда от конзолата число 
+/*Зад.  Напишете метод ReadNumber(int start, int end), който въвежда от конзолата число 
   в диапазона [start … end]. В случай на въведено невалидно число или число, което не е в подадения
   диапазон, хвърлете подходящо изключение. Използвайки този метод, напишете програма, 
   която въвежда 10 числа a1, a2, …, a10, такива, че 1 < a1 < … < a10 < 100.  */
 
 int ReadNumber(int start, int end)
 {
+	string s;
 	int x;
-	cout << "x = "; cin >> x;
+	cin >> s;
+	x = stoi(s); // Ако предизвика изключение, то ще се обработи в извикващата функция - main()
 	if (x < start || x > end)
 		throw OutOfRangeException("Incorrect number");
 	return x;
@@ -31,6 +34,10 @@ int main()
 			left = mas[i - 1];
 		}
 		catch (OutOfRangeException &e)
+		{
+			cout << e.what() << endl;
+		}
+		catch (logic_error &e)  // Може да го предизвика std::stoi() - invalid_argument или out_of_range
 		{
 			cout << e.what() << endl;
 		}
