@@ -2,6 +2,7 @@
 #include <string>
 class Employee
 {
+	friend class HR;
 public:
 	Employee() = default;
 	Employee(std::string, int, double);
