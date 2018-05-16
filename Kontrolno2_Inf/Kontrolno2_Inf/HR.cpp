@@ -17,7 +17,7 @@ void HR::AddNew()
 	std::cin >> c;
 	std::cout << "Enter name: ";
 	std::cin >> name;
-	std::cout << "Enter internship in monthsL ";
+	std::cout << "Enter internship in months: ";
 	std::cin >> internship;
 	std::cout << "Enter salary: ";
 	std::cin >> salary;
@@ -34,7 +34,8 @@ void HR::AddNew()
 		std::cout << "Java (y/n): ";
 		std::cin >> language;
 		java = language == 'y';
-		employees.push_back(new Developer(name, internship, salary, cpp, java)); break;
+		employees.push_back(new Developer(name, internship, salary, cpp, java));
+		break;
 	}
 }
 void HR::FireEmployee(std::string n)
