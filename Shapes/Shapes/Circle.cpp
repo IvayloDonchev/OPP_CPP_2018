@@ -6,7 +6,7 @@
 
 Circle::Circle(double r) : r(r)
 {
-	if (r < 0.0)
+	if (r <= 0.0)
 		throw std::out_of_range("False circle");
 }
 

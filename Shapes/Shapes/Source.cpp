@@ -6,6 +6,12 @@
 #include <iostream>
 using namespace std;
 
+
+void Foo(Shape& s)
+{
+	cout << s.Area() << endl;
+}
+
 int main()
 {
 	Shape* shapes[]{ new Triangle(3, 4, 5),
@@ -21,6 +27,7 @@ int main()
 	for (auto x : shapes)
 		x->Disp();
 	//Shape s; //грешка! (обект на абстрактен клас)
-
+	Triangle tri(3, 4, 5);
+	Foo(tri);
 	system("pause");
 }
