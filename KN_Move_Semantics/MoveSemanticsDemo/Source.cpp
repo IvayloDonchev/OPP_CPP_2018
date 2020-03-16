@@ -27,9 +27,12 @@ public:
 	}
 	~mystring()
 	{
-		cout << this << " destructor...\n";
+		cout << this << " destructor...";
 		if (buffer)
 			delete[] buffer;
+		else
+			cout << " (Nothing to delete...)";
+		cout << '\n';
 	}
 	//Copy semantics
 	mystring(const mystring& other) //copy constructor
@@ -41,7 +44,8 @@ public:
 	}
 	mystring& operator=(const mystring& other)  //copy assignment
 	{
-		if (this == &other) return *this;
+		if (this == &other)
+			return *this;
 		if (buffer)
 			delete[] buffer;
 		size_t sz{ strlen(other.buffer) + 1 };
@@ -67,11 +71,18 @@ public:
 		cout << this << " move assignment...\n";
 		return *this;
 	}
-	void disp() const {
-		cout << buffer << endl;
+	void disp() const
+	{
+		if(buffer)
+			cout << buffer << endl;
 	}
-	friend ostream& operator << (ostream& out, const mystring& s) {
-		return out << s.buffer;
+	friend ostream& operator << (ostream& out, const mystring& s)
+	{
+		if (s.buffer)
+			out << s.buffer;
+		else
+			out << "---empty---";
+		return out;
 	}
 };
 
@@ -84,5 +95,10 @@ int main()
 	cout << "---------------Swap----------------\n";
 	cout << "s1: " << s1 << endl;
 	cout << "s2: " << s2 << endl;
-
+	mystring s3;
+	s3 = s1;
+	cout << "s3: " << s3 << endl;
+	s2 = move(s3);
+	cout << "s2: " << s2 << endl;
+	cout << "s3: " << s3 << endl;
 }
